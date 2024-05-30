@@ -109,7 +109,7 @@ public class SimpleScanViewController: ScanBaseViewController {
     static var enableCameraPermissionsDescriptionString = String.Localized.update_phone_settings
     static var closeButtonString = String.Localized.close
     static var torchButtonString = String.Localized.torch
-    static var privacyLinkString = String.Localized.scanCardExpectedPrivacyLinkText()
+    public var privacyLinkString = String.Localized.scanCardExpectedPrivacyLinkText()
 
     weak var delegate: SimpleScanDelegate?
     var scanPerformancePriority: ScanPerformance = .fast
@@ -299,7 +299,7 @@ public class SimpleScanViewController: ScanBaseViewController {
     }
 
     func setupPrivacyLinkTextUi() {
-        if let attributedString = SimpleScanViewController.privacyLinkString {
+        if let attributedString = privacyLinkString {
             privacyLinkText.attributedText = attributedString
         }
 

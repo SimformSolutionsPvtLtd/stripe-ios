@@ -47,7 +47,7 @@ public class CardScanSheet {
 
         let vc = SimpleScanViewController()
         if !privacyLinkText.isEmpty {
-            vc.privacyLinkText.text = privacyLinkText
+            vc.privacyLinkString = NSAttributedString(string: privacyLinkText)
         }
         vc.delegate = self
 
