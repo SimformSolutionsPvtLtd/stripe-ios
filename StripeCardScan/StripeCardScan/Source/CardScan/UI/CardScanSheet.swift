@@ -31,6 +31,7 @@ public class CardScanSheet {
     /// - Parameter completion: Called with the result of the scan after the card scan sheet is dismissed
             public func present(
         from presentingViewController: UIViewController,
+        privacyLinkText: String = "",
         completion: @escaping (CardScanSheetResult) -> Void,
         animated: Bool = true
     ) {
@@ -45,6 +46,9 @@ public class CardScanSheet {
         }
 
         let vc = SimpleScanViewController()
+        if !privacyLinkText.isEmpty {
+            vc.privacyLinkText.text = privacyLinkText
+        }
         vc.delegate = self
 
         // Overwrite completion closure to retain self until called
